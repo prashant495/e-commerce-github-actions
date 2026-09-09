@@ -1,0 +1,21 @@
+# Goal: To say Hello in the workflow and tell the title/Name of repository.
+# name of workflow, here Hello
+name: Hello
+
+# when the workflow runs
+
+on:
+  push:
+    branches: [main]
+
+# what the workflow does
+
+jobs:
+  # name of your jobs
+  greet:
+  # where the job runs os
+    runs-on: ubuntu-latest
+    # the sequence of steps the job does
+    steps:
+      - name: Say hello
+        run: echo "Hello Dosto"
