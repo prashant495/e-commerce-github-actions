@@ -12,3 +12,5 @@ jobs:
     steps:
       - name: show secrets
         run: echo "My name is ${{env.name}}"
+      - name: show secrets
+        run: echo "One fun secret is ${{secrets.BHUMI_SECRET}}"
