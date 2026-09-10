@@ -6,6 +6,7 @@ name: Hello
 
 on:
   push:
+    paths-ignore: readme.md
     branches: [main]
 
 # what the workflow does
