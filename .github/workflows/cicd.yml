@@ -3,6 +3,8 @@
 name: CI/CD
 on:
   push:
+    paths-ignore:
+      - readme.md
     branches: [main]
 
 jobs:
