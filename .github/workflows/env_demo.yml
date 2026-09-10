@@ -2,6 +2,16 @@ name: show env variables
 
 on:
   workflow_dispatch:
+    inputs:
+      environments:
+        description: Select the environment you want
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - stg
+          - prd
 
 env:
   name: shubham
