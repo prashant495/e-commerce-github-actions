@@ -27,7 +27,7 @@ jobs:
         run: echo "test done"
 
   deploy:
-    needs: test
+    needs: [code,build,test]
     runs-on: ubuntu-latest
     steps:
       - name: deployment
