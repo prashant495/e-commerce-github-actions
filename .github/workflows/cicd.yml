@@ -13,18 +13,21 @@ jobs:
         run: echo "got the code"
 
   build:
+    needs: code
     runs-on: ubuntu-latest
     steps:
       - name: Build the code with Docker
         run: echo "code built"
 
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: testing the code
         run: echo "test done"
 
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: deployment
