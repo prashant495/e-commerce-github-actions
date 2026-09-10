@@ -19,3 +19,6 @@ jobs:
     steps:
       - name: Say hello
         run: echo "Hello Dosto"
+      - name: Print repository name
+        run: echo "The repository name is ${{ github.event.repository.name }}"
+
