@@ -1,6 +1,6 @@
 # Goal: to check if the python code is syntactically correct.
 
-name: Code Lint
+name: Code Lint and test
 
 on:
   push:
@@ -10,6 +10,11 @@ on:
 jobs:
   lintjob:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.12", "3.13", "3.14"]
+
     steps:
       - name: clone Code
         uses: actions/checkout@v4
@@ -17,7 +22,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: ${{matrix.python-version}}
 
       - name: install dependency
         run: pip install -r requirements.txt
