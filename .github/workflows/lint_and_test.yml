@@ -24,3 +24,6 @@ jobs:
 
       - name: lint the code
         run: ruff check .
+
+      - name: tset the code
+        run: pytest
