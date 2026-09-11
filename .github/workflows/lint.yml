@@ -5,7 +5,7 @@ name: Code Lint
 on:
   push:
     branches:
-      - [main]
+     [main]
     
 jobs:
   lintjob:
