@@ -5,9 +5,11 @@ name: Hello
 # when the workflow runs
 
 on:
-  push:
-    paths-ignore: readme.md
-    branches: [main]
+  workflow_dispatch:
+    
+  # push:
+  #   paths-ignore: readme.md
+  #   branches: [main]
 
 # what the workflow does
 

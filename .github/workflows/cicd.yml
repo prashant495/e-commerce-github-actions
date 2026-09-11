@@ -1,11 +1,15 @@
 # Goal: To build cicd pipeline (just dummy)
 
 name: CI/CD
+
 on:
-  push:
-    paths-ignore:
-      - readme.md
-    branches: [main]
+  workflow_dispatch:
+    
+  # push:
+  #   paths-ignore:
+  #     - readme.md
+  #   branches: [main]
+  
 
 jobs:
   code:
