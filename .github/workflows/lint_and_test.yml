@@ -3,9 +3,10 @@
 name: Code Lint and test
 
 on:
-  push:
-    branches:
-     [main]
+  # push:
+  #   branches:
+  #    [main]
+    workflow_call
     
 jobs:
   lintjob:

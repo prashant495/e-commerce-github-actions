@@ -1,0 +1,15 @@
+# Goal: To call lint and push code first and docker push will run after that
+
+name: continuous integration
+
+on:
+    push:
+        branches: main
+
+jobs: 
+    code-lint:
+        uses: ./.github/workflows/lint_and_test.yml
+
+    build-and-push:
+        uses: ./.github/workflows/docker.yml
+       
