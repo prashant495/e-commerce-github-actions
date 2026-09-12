@@ -7,10 +7,10 @@ on:
     #     branches:
     #         [main]
       workflow_call
-      
+
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
 
         steps:
         - name: checkout code
