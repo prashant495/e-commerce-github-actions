@@ -1,0 +1,18 @@
+name: CI
+
+on:
+    push:
+
+jobs:
+    code-lint:
+      uses: ./.github/workflows/lint_and_test.yml
+
+    build-and-push:
+      secrets: inherit
+      needs: code-lint
+      uses: ./.github/workflows/docker.yml
+
+    deploy:
+      secrets: inherit
+      needs: [ code-lint, build-and-push ]
+      uses: ./.github/workflows/cd.yml
