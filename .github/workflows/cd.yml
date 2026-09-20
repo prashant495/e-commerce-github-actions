@@ -1,0 +1,34 @@
+# Goal: To deploy and tested image to an EC2 instance
+
+name: CD
+
+on:
+    workflow_dispatch: 
+
+jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+          - name: code checkout
+            uses: actions/checkout@v7
+
+          - name: setup docker
+            uses: docker/setup-docker-action@v5
+
+          - name: Docker login
+            uses: docker/login-action@v4
+            with:
+              username: ${{ vars.DOCKERHUB_USERNME }}
+              password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+          - name: Execute remote SSH commands using ssh key
+            uses: appleboy/ssh-action@v1.2.1
+            with:
+              host: ${{ secrets.HOST }}
+              username: ${{ secrets.USERNAME }}
+              key: ${{ secrets.KEY }}
+              port: ${{ secrets.PORT }}
+              script:
+                  git clone
+                  docker compose up -d
+                  echo "Deployment successful!"
